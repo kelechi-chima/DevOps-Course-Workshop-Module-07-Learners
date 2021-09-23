@@ -27,3 +27,7 @@ jobs:
       run: |
         cd ./DotnetTemplate.Web
         npm t
+    - name: Slack notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
