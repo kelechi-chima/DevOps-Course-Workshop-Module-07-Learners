@@ -12,8 +12,7 @@ jobs:
     - name: Run C Sharp tests
       run: dotnet test
     - name: npm install
-      run: echo 'Hello world'
-    #   - run: cd ./DotnetTemplate.Web
+      run: cd ./DotnetTemplate.Web
     #   - run: npm install
     # - name: npm build
     #   - run: cd ./DotnetTemplate.Web
