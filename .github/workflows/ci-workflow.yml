@@ -6,7 +6,20 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest        # Sets the build environment a machine with the latest Ubuntu installed
     steps:
-    - uses: actions/checkout@v2   # Adds a step to checkout the repository code
-    - uses: actions/hello-world-javascript-action@v1.1
-      with:
-        who-to-greet: 'Jermaine the leaping meerkat'
+    - uses: actions/checkout@v2
+    - name: Build the C Sharp code.
+      run: dotnet build
+    - name: Run C Sharp tests
+      run: dotnet test
+    - name: npm install
+      run: cd ./DotnetTemplate.Web
+      run: npm install
+    - name: npm build
+      run: cd ./DotnetTemplate.Web
+      run: npm run build
+    - name: Run linter on TypeScript code
+      run: cd ./DotnetTemplate.Web
+      run: npm run lint
+    - name: Run Typescript tests
+      run: cd ./DotnetTemplate.Web
+      run: npm t
