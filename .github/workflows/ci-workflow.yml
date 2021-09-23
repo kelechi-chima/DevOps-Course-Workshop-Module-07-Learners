@@ -15,12 +15,15 @@ jobs:
       run: |
         cd ./DotnetTemplate.Web
         npm install
-    # - name: npm build
-    #   - run: cd ./DotnetTemplate.Web
-    #   - run: npm run build
-    # - name: Run linter on TypeScript code
-    #   - run: cd ./DotnetTemplate.Web
-    #   - run: npm run lint
-    # - name: Run Typescript tests
-    #   - run: cd ./DotnetTemplate.Web
-    #   - run: npm t
+    - name: npm build
+      run: |
+        cd ./DotnetTemplate.Web
+        npm run build
+    - name: Run linter on TypeScript code
+      run: |
+        cd ./DotnetTemplate.Web
+        npm run lint
+    - name: Run Typescript tests
+      run: |
+        cd ./DotnetTemplate.Web
+        npm t
